@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Redirect to .NET API Browser",
+  "description": "This extension is redirect to .NET API Browser page",
+  "version": "0.1",
+
+  "icons": {
+    "128": "icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://msdn.microsoft.com/*/library/*"],
+      "js": ["script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": "icon.png",
+    "default_title": "Redirect to .NET API Browser"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
