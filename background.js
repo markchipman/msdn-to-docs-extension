@@ -2,8 +2,8 @@
     var type = {};
 
     chrome.runtime.onMessage.addListener(function(request, sender, callback) {
-        if (request.type && request.type.startsWith("T:")) {
-            type[sender.tab.id] = request.type.substr(2).replace("`", "-").toLowerCase();
+        if (request.type && request.type.startsWith("t:")) {
+            type[sender.tab.id] = request.type.substr(2).replace("`", "-");
             chrome.pageAction.show(sender.tab.id);
         } else {
             type[sender.tab.id] = null;
